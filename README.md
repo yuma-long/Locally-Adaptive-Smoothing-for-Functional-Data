@@ -28,3 +28,6 @@ The repository includes the following files.
 ## Demo
 2nd order FTF (functional trend filtering) is able to localize its estimates around strong inhomogeneous spikes, which implies that it is able to detect the event or spot of interest.
 
+
+![covid_locally0-1](https://user-images.githubusercontent.com/44727480/127317873-f1d9c418-548b-426e-9d6d-c10aad01e9be.png)
+
