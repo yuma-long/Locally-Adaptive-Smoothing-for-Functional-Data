@@ -1,33 +1,30 @@
-# Locally Adaptive Smoothing For Functional Data
+# Trend Filtering for Functional Data
 
 
 ## Overview
-This repository provides R code implementing functional trend filtering and other smooothing methods, as proposed by the following paper. 
+This repository contains the R implementation of locally adaptive smoothing methods for functional data, as proposed in the following paper:
 
-Wakayama, T. and Sugasawa, S. (2021). Locally Adaptive Smoothing for Functional Data. https://arxiv.org/abs/2104.02456
-
+**Wakayama, T., & Sugasawa, S. (2023). [Trend filtering for functional data.](https://doi.org/10.1002/sta4.590)**
 
 ## Description
-The repository includes the following files.
+The repository includes the following files:
 
-- functions : Script implementing the proposed methods and the related
-  - FTF-function.R  : functions for functional trend iltering, including FTF(method) and FTF_select(parameter tuning)
-  - FHP-function.R  : functions for functional HP filtering, including FHP(method) and FHP_select(parameter tuning)
-  - FTFG-function.R : functions for functional trend Filtering on graph
-  - FHPG-function.R : functions for functional HP filtering on graph
-  - FDPC-select.R   : function for tuning parameter of FDPC
+- `functions/` : Scripts implementing the proposed methods and related functions
+  - `FTF-function.R`  : Functions for functional trend filtering (FTF)
+  - `FHP-function.R`  : Functions for functional HP filtering
+  - `FTFG-function.R` : Functions for functional trend filtering on graphs
+  - `FHPG-function.R` : Functions for functional HP filtering on graphs
+  - `FDPC-select.R`   : Function for tuning parameter selection
 
-- simulation.R : Script for applying the propsed time-series methods to generated datasets 
+- `simulation.R` : Script for applying the proposed methods to generated datasets 
 
-- COVID19_cases : Script for applying the proposed spatial methods to the COVID-19 datasets
-  -  AdjacencyMatrix_JPN.csv : Adjacency matrix of prefectures of Japan
-  -  CovidPerPopulation.csv  : COVID-19 cases per one million population by prefecture
-  -  Covid_Trend_Estimate.R  : trend estimation of transition of COVID-19 cases
-
+- `COVID19_cases/` : Script for applying the proposed methods to COVID-19 datasets
+  - `AdjacencyMatrix_JPN.csv` : Adjacency matrix of prefectures of Japan
+  - `CovidPerPopulation.csv`  : COVID-19 cases per one million population by prefecture
+  - `Covid_Trend_Estimate.R`  : Trend estimation of transition of COVID-19 cases
 
 ## Demo
-2nd order FTF (functional trend filtering) is able to localize its estimates around strong inhomogeneous spikes, which implies that it is able to detect the event or spot of interest.
-
+The 2nd order FTF is capable of localizing its estimates around strong inhomogeneous spikes, indicating its effectiveness in detecting events or spots of interest.
 
 ![covid_locally0-1](https://user-images.githubusercontent.com/44727480/127317873-f1d9c418-548b-426e-9d6d-c10aad01e9be.png)
 
