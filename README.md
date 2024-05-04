@@ -28,3 +28,5 @@ The 2nd order FTF is capable of localizing its estimates around strong inhomogen
 
 ![covid_locally0-1](https://user-images.githubusercontent.com/44727480/127317873-f1d9c418-548b-426e-9d6d-c10aad01e9be.png)
 
+## License
+The source code and documentation are licensed under the MIT License.
