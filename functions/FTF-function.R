@@ -57,9 +57,13 @@ FTF <- function(fdata_, k, lam, L, ep1, ep2) {
   rho <- 0.1
 
   #  get pc functions, mean function and their coefficients 
+  start <- proc.time()
   mf   <- create.pc.basis(fdata_,l=1:L)$mean$data 
   pcfs <- t(create.pc.basis(fdata_,l=1:L)$basis$data) 
   X    <- create.pc.basis(fdata_,l=1:L)$x[,1:L] 
+  end <- proc.time()
+  print("fPCA")
+  print(summary(end - start))
 
   #  set the initial values 
   j  <- 0
@@ -68,9 +72,11 @@ FTF <- function(fdata_, k, lam, L, ep1, ep2) {
   a  <- C%*%b    
   u  <- matrix(1, nrow=n-k-1, ncol=L) 
   er <- 10^3
+  iter_cnt <- 0
 
   #  itetration
   while (er > ep1) {
+    iter_cnt <- iter_cnt + 1
     #  update b
     if (L==1){
       b0 <- b
@@ -130,6 +136,7 @@ FTF <- function(fdata_, k, lam, L, ep1, ep2) {
   result = list()
   result$ftf = ftf
   result$KL = KL
+  print(iter_cnt)
   return(result)
 }
 
