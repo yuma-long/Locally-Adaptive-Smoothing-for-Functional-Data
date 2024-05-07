@@ -52,3 +52,16 @@ denoised_coefs_matrix <- as.matrix(denoised_coefs) # denoised coefficient matrix
 
 rownames(denoised_coefs_matrix) <- rownames(fd_obj$coefs)
 colnames(denoised_coefs_matrix) <- colnames(test_matrix)
+
+fd_obj_cp <- fd_obj
+fd_obj_cp$coefs <- denoised_coefs_matrix
+prediction_result_tv <- t(eval.fd(wavelength, fd_obj_cp))
+
+
+# Result ------------------------------------------------------------------
+
+linear_dif <- testSet$NIR - prediction_result_linear
+tv_dif <- testSet$NIR - prediction_result_tv
+
+sum_sq_linear_dif <- sum(linear_dif^2)
+sum_sq_tv_dif <- sum(tv_dif^2)
